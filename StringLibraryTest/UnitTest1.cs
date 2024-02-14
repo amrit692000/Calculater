@@ -148,4 +148,76 @@ public void Test_Subtract_LargeAndSmallNumbers_ReturnsCorrectDifference()
     // Assert
     Assert.AreEqual(expectedDifference, actualDifference);
 }
+[TestMethod]
+public void Test_Multiply_TwoPositiveNumbers_ReturnsCorrectProduct()
+{
+    // Arrange
+    decimal number1 = 3.5m;
+    decimal number2 = 4.2m;
+    decimal expectedProduct = 14.7m;
+
+    // Act
+    decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedProduct, actualProduct);
+}
+[TestMethod]
+public void Test_Multiply_PositiveAndNegativeNumber_ReturnsCorrectProduct()
+{
+    // Arrange
+    decimal number1 = 6.8m;
+    decimal number2 = -3.2m;
+    decimal expectedProduct = -21.76m;
+
+    // Act
+    decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedProduct, actualProduct);
+}
+[TestMethod]
+public void Test_Multiply_ZeroAndPositiveNumber_ReturnsZero()
+{
+    // Arrange
+    decimal number1 = 0m;
+    decimal number2 = 8.9m;
+    decimal expectedProduct = 0m;
+
+    // Act
+    decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedProduct, actualProduct);
+}
+[TestMethod]
+public void Test_Multiply_ZeroAndNegativeNumber_ReturnsZero()
+{
+    // Arrange
+    decimal number1 = 0m;
+    decimal number2 = -4.5m;
+    decimal expectedProduct = 0m;
+
+    // Act
+    decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedProduct, actualProduct);
+}
+[TestMethod]
+public void Test_Multiply_PositiveAndZeroNumber_ReturnsZero()
+{
+    // Arrange
+    decimal number1 = 10.5m;
+    decimal number2 = 0m;
+    decimal expectedProduct = 0m;
+
+    // Act
+    decimal actualProduct = StringLibrary.Multiply(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedProduct, actualProduct);
+}
+
+
 }
