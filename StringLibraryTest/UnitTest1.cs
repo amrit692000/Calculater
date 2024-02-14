@@ -218,6 +218,78 @@ public void Test_Multiply_PositiveAndZeroNumber_ReturnsZero()
     // Assert
     Assert.AreEqual(expectedProduct, actualProduct);
 }
+[TestMethod]
+public void Test_Divide_TwoPositiveNumbers_ReturnsCorrectQuotient()
+{
+    // Arrange
+    decimal dividend = 10.5m;
+    decimal divisor = 2.5m;
+    decimal expectedQuotient = 4.2m;
+
+    // Act
+    decimal actualQuotient = StringLibrary.Divide(dividend, divisor);
+
+    // Assert
+    Assert.AreEqual(expectedQuotient, actualQuotient);
+}
+[TestMethod]
+public void Test_Divide_PositiveAndNegativeNumber_ReturnsCorrectQuotient()
+{
+    // Arrange
+    decimal dividend = 10.5m;
+    decimal divisor = -2.5m;
+    decimal expectedQuotient = -4.2m;
+
+    // Act
+    decimal actualQuotient = StringLibrary.Divide(dividend, divisor);
+
+    // Assert
+    Assert.AreEqual(expectedQuotient, actualQuotient);
+}
+[TestMethod]
+[ExpectedException(typeof(DivideByZeroException))]
+public void Test_Divide_DivideByZero_ThrowsDivideByZeroException()
+{
+    // Arrange
+    decimal dividend = 10.5m;
+    decimal divisor = 0m;
+
+    // Act
+    decimal actualQuotient = StringLibrary.Divide(dividend, divisor);
+
+    // Assert
+    // This test expects a DivideByZeroException to be thrown
+}
+[TestMethod]
+public void Test_Divide_ZeroByPositiveNumber_ReturnsZero()
+{
+    // Arrange
+    decimal dividend = 0m;
+    decimal divisor = 3.5m;
+    decimal expectedQuotient = 0m;
+
+    // Act
+    decimal actualQuotient = StringLibrary.Divide(dividend, divisor);
+
+    // Assert
+    Assert.AreEqual(expectedQuotient, actualQuotient);
+}
+[TestMethod]
+public void Test_Divide_NegativeAndPositiveNumber_ReturnsCorrectQuotient()
+{
+    // Arrange
+    decimal dividend = -10.5m;
+    decimal divisor = 2.5m;
+    decimal expectedQuotient = -4.2m;
+
+    // Act
+    decimal actualQuotient = StringLibrary.Divide(dividend, divisor);
+
+    // Assert
+    Assert.AreEqual(expectedQuotient, actualQuotient);
+}
 
 
 }
+
+
