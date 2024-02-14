@@ -75,6 +75,77 @@ public void Test_Add_ZeroAndNegativeNumber_ReturnsCorrectSum()
     // Assert
     Assert.AreEqual(expectedSum, actualSum);
 }
+[TestMethod]
+public void Test_Subtract_TwoPositiveNumbers_ReturnsCorrectDifference()
+{
+    // Arrange
+    decimal number1 = 8.5m;
+    decimal number2 = 3.2m;
+    decimal expectedDifference = 5.3m;
+
+    // Act
+    decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedDifference, actualDifference);
+}
+[TestMethod]
+public void Test_Subtract_PositiveAndNegativeNumber_ReturnsCorrectDifference()
+{
+    // Arrange
+    decimal number1 = 6.8m;
+    decimal number2 = -3.2m;
+    decimal expectedDifference = 10.0m;
+
+    // Act
+    decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedDifference, actualDifference);
+}
+[TestMethod]
+public void Test_Subtract_ZeroAndPositiveNumber_ReturnsCorrectDifference()
+{
+    // Arrange
+    decimal number1 = 0m;
+    decimal number2 = 8.9m;
+    decimal expectedDifference = -8.9m;
+
+    // Act
+    decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedDifference, actualDifference);
+}
+[TestMethod]
+public void Test_Subtract_ZeroAndNegativeNumber_ReturnsCorrectDifference()
+{
+    // Arrange
+    decimal number1 = 0m;
+    decimal number2 = -4.5m;
+    decimal expectedDifference = 4.5m;
+
+    // Act
+    decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedDifference, actualDifference);
+}
 
     
+
+[TestMethod]
+public void Test_Subtract_LargeAndSmallNumbers_ReturnsCorrectDifference()
+{
+    // Arrange
+    decimal number1 = 1234567890.123m;
+    decimal number2 = 456.789m;
+    decimal expectedDifference = 1234567433.334m;
+
+    // Act
+    decimal actualDifference = StringLibrary.Subtract(number1, number2);
+
+    // Assert
+    Assert.AreEqual(expectedDifference, actualDifference);
+}
 }
